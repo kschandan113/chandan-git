@@ -17,6 +17,14 @@ ssh -T git@github.com = Make sure your SSH key is added to your GitHub account.
 git push --set-upstream origin master = this command is used to push git to github master
 
 
+git remote set-url gl-origin https://gitlab.com/kschandan113/tutedude-gitlab.git
+
+chandantech@SIDT00227D48A:~/tutedude/06_vc_git/chandan$ git remote -v
+gl-origin       https://gitlab.com/kschandan113/tutedude-gitlab.git (fetch)
+gl-origin       https://gitlab.com/kschandan113/tutedude-gitlab.git (push)
+origin  https://github.com/kschandan113/chandan-git.git (fetch)
+origin  https://github.com/kschandan113/chandan-git.git (push)
+chandantech@SIDT00227D48A:~/tutedude/06_vc_git/chandan$ git push gl-origin master
 
 
 
