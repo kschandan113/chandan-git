@@ -8,3 +8,19 @@ cat ~/.ssh/id_rsa.pub (then copy the content)
 
 copy and paste the ssh key on github/gitlab
 
+git remote set-url origin https://github.com/kschandan113/chandan-git.git  = this command is used to connect to local to remote github https.
+
+git remote set-url origin git@github.com:kschandan113/chandan-git.git = this command is used to connect to local to remote github ssh.
+
+ssh -T git@github.com = Make sure your SSH key is added to your GitHub account.
+
+git push --set-upstream origin master = this command is used to push git to github master
+
+
+
+
+
+
+
+
+
