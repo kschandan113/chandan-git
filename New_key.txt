@@ -1,0 +1,10 @@
+ssh-keygen -t rsa -b 4096 -C kschandan113@gmail.com = this command is used to create a new rsa-key.
+
+eval "$(ssh-agent -s)" = 1. Start the agent
+
+ssh-add ~/.ssh/id_rsa = 2. Add your private key to the agent
+
+cat ~/.ssh/id_rsa.pub (then copy the content)
+
+copy and paste the ssh key on github/gitlab
+
