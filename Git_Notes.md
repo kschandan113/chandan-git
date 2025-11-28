@@ -183,3 +183,36 @@ git add -A does the same thing as git add --all
 # Check Staged Files with git status
 
 # How to Unstage a File:-
+    -> If you staged a file by mistake, you can remove it from the staging area (unstage it) with:
+# EX:-
+git restore --staged simple.html
+
+* Now index.html is no longer staged. You can also use git reset HEAD index.html for the same effect.
+
+# Troubleshooting:-
+* Staged the wrong file? Use git restore --staged <file> to unstage it.
+* Forgot to stage a file? Just run git add <file> again before you commit.
+* Not sure what's staged? Run git status to see what will be committed.
+
+
+#-----------------------------------Git Commit----------------------------------------------------#
+## What is a Commit?
+* A commit is like a save point in your project.
+* It records a snapshot of your files at a certain time, with a message describing what changed.
+* You can always go back to a previous commit if you need to.
+
+Here are some key commands for commits:
+    -> git commit -m "message" - Commit staged changes with a message
+    -> git commit -a -m "message" - Commit all tracked changes (skip staging)
+    -> git log - See commit history
+
+## How to Commit with a Message (-m)
+    -> To save your staged chnages use (git commit -m "your message")
+# EX:-
+git commit -m "First release of Hello World!"
+
+## Commit All Changes Without Staging (-a):-
+* You can skip the staging step for already tracked files with git commit -a -m "message".
+* This commits all modified and deleted files, but not new/untracked files.
+# EX:- 
+git commit -a -m "quick update"
