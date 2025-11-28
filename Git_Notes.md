@@ -216,3 +216,119 @@ git commit -m "First release of Hello World!"
 * This commits all modified and deleted files, but not new/untracked files.
 # EX:- 
 git commit -a -m "quick update"
+
+* Warning: Skipping the staging step can make you include unwanted changes. Use with care.
+* Note: git commit -a does not work for new/untracked files. You must use git add <file>   
+  first for new files.
+
+# What happens if you try to commit a new file with -a?
+git commit -a -m "Try to commit new"
+
+# Write Multi-line Commit Messages:-
+* If you just type git commit (no -m), your default editor will open so you can write a detailed, multi-line message:
+# EX:- 
+git commit
+Write a short summery on the first line, leave a blank line, then add more detail below.
+
+# Commit Message Best Practices:
+* Keep the first line short (50 characters or less).
+* Use the imperative mood (e.g., "Add feature" not "Added feature").
+* Leave a blank line after the summary, then add more details if needed.
+* Describe why the change was made, not just what changed.
+
+# Other Useful Commit Options:-
+* Create an empty commit:
+    git commit --allow-empty -m "Start project"
+* Use previous commit message (no editor):
+    git commit --no-edit
+* Quickly add staged changes to last commit, keep message:
+    git commit --amend --no-edit
+
+# Troubleshooting Common Commit Mistakes:-
+* Forgot to stage a file?
+    If you run "git commit -m "message"" but forgot to "git add" a file, just add it and commit again. Or use "git commit --amend" to add it to your last commit.
+* Typo in your commit message?
+    Use "git commit --amend -m "Corrected message"" to fix the last commit message.
+* Accidentally committed the wrong files?
+    You can use "git reset --soft HEAD~1" to undo the last commit and keep your changes staged.
+
+# View Commit History (git log):-
+* To view the history of commits for a repository, you can use the "git log" command:
+EX:- git log
+* for a shorter view, use "git log --online"
+Ex:- git log --online
+
+* To see which files changed in each commit, use "git log --stat:"
+EX:- git log --stat
+
+
+#----------------------------------Git Tagging----------------------------------------#
+# Key Commands for Tagging:-
+* git tag <tagname> - Create a lightweight tag
+* git tag -a <tagname> -m "message" - Create an annotated tag
+* git tag <tagname> <commit-hash> - Tag a specific commit
+* git tag - List tags
+* git show <tagname> - Show tag details
+
+# What is a Tag?
+    -> A tag in Git is like a label or bookmark for a specific commit.
+    -> Tags are most often used to mark important points in your project history, like releases (v1.0 or v2.0).
+
+* Tags are a simple and reliable way to keep track of versions and share them with your team or users.
+
+# Some common tag types include:
+    * Releases: Tags let you mark when your project is ready for release, so you (and others)  
+      can always find that exact version later.
+    * Milestones: Use tags to highlight major milestones, like when a big feature is finished  
+      or a bug is fixed.
+    * Deployment: Many deployment tools use tags to know which version of your code to deploy.
+    * Hotfixes: If you need to fix an old version, tags make it easy to check out and patch  
+      the right code.
+
+## Create a Lightweight Tag
+    -> A lightweight tag is just a name for a commit.
+    -> It's quick and simple, but does not store extra information.
+
+* Annotated vs Lightweight Tags
+    -> Annotated Tag: Stores author, date, and message.
+       Recommended for releases and sharing with others.
+    -> Lightweight Tag: Just a simple name for a commit (no extra info, like a bookmark).
+* EX:- 
+git tag v1.0
+
+# Create an Annotated Tag (-a -m):-
+    -> An annotated tag stores your name, the date, and a message.
+    -> This is recommended for most uses.
+* EX:-
+git tag -a v1.0 -m "version 1.0 release"
+
+# Tag a Specific Commit
+    -> You can tag an older commit by specifying its hash:
+* EX:-
+git tag v1.1 1a2b3c4d
+* Replace 1a2b3c4d with the commit hash you want to tag.
+
+# List Tags:-
+* See all tags in your repository:
+* EX:- 
+git tag
+
+# Show Tag Details (git show)
+    -> See details about a tag and the commit it points to:
+* Ex:-
+git show v1.0
+
+# Push Tags to Remote
+    -> By default, tags exist only on your local computer.
+    -> If you want others to see your tags, you need to push them to your remote 
+       repository.
+    -> If you don't push your tags, only you will see them, and only locally.
+    -> To push a single tag to your remote repository (for example, after creating a 
+       release tag):
+* EX:-
+git push origin v1.0
+
+Note:- 
+1. Pushing commits with git push does not push your tags!
+2. You must push tags explicitly as shown above.
+
