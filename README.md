@@ -1,5 +1,7 @@
 # chandan-git
 
-This is my first repo /n
-MD - markdown /n
+This is my first repo
+<br>
+MD - markdown
+<br>
 this is chandan singh
