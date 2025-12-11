@@ -5,3 +5,5 @@ This is my first repo
 MD - markdown
 <br>
 this is chandan singh
+
+author - chandan
